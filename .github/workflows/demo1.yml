@@ -1,6 +1,8 @@
 name: Events Demo 1
 on: 
-  workflow_dispatch
+  push:
+    branches:
+      - main  
   
 jobs:
   test:
