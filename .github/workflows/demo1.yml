@@ -29,7 +29,7 @@ jobs:
         with:
           name: build-artifacts 
           path: |
-                01 Starting Project\dist
+                dist
                 package.json
   deploy:
     runs-on: ubuntu-latest
@@ -39,5 +39,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
+      - name: Output build artifacts
+        run: ls
       - name: Deploy project
         run: echo "Deploying..."
